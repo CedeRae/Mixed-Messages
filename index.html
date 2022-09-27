@@ -6,7 +6,30 @@
         <title>Mixed Messages</title>
     </head>
     <body>
-        <div id="quote"></div>
+        <div id="quote">
+            <script>
+
+const getQuote = () => {
+    const api_url = "https://zenquotes.io/api/random/[your_key]"
+
+    fetch(api_url).then((resp) => {
+        if (!resp.ok) {
+            throw Error("Error");
+        }
+        return resp.json();
+    })
+    .then(data => {
+        let html = JSON.stringify(data);
+        
+        document.querySelector('#quote').insertAdjacentHTML("afterbegin", `<h2>${html}</h2>`);
+        console.log(data);
+    })
+};
+
+getQuote();
+
+            </script>
+        </div>
     </body>
-    <script type = 'text/javascript' src = 'script.mjs'></script>
+    <script type="module" src="script.mjs"></script>
 </html>
