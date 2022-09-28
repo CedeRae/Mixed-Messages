@@ -1,14 +1,16 @@
-# Mixed-Messages
+## Mixed-Messages
 
-## Objective
+### Objective
 
-In this project provided by CodeCademy I will create a program that returns a different message each time it is opened. 
-For my version of this project my program will return a new insperational message each time it is loaded. I also hope to 
-have my program produce a new relaxing background image each time the page is loaded as well.
+This project was provided to me by codecademy. The objective is to create a program that produces a different message 
+each time its loaded. To accomplish this, I used JSON to create an API call to ZenQuotes Premium to get one 
+randomized insperational quote and the author's name each time called.
 
-## Current progress
+#### Current progress
 
-So far I have created a .mjs file that makes a web API call to ZenQuotes Premium. Here is the url for the web documents: 
-(https://premium.zenquotes.io/zenquotes-documentation/)
++ Created one html document with Javascript
++ Created JSON module
++ Obtained data from "zenquotes.io/api/random/[your_key]" via 'Fetch'
++ Parse to JSON object literal
++ Obtain nested element and print to screen
 
-I also started work on an html doc that will post the results to the web for viewing.
