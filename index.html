@@ -6,30 +6,29 @@
         <title>Mixed Messages</title>
     </head>
     <body>
+
         <div id="quote">
             <script>
-
+                //Makes API call to zenquotes then parse to object literal.
 const getQuote = () => {
     const api_url = "https://zenquotes.io/api/random/[your_key]"
 
-    fetch(api_url).then((resp) => {
-        if (!resp.ok) {
+    fetch(api_url).then((response) => {
+        if (!response.ok) {
             throw Error("Error");
         }
-        return resp.json();
+        return response.json();
     })
+                //Calls nested object and prints to the screen.
     .then(data => {
-        let html = JSON.stringify(data);
-        
-        document.querySelector('#quote').insertAdjacentHTML("afterbegin", `<h2>${html}</h2>`);
-        console.log(data);
+        document.querySelector('#quote').insertAdjacentHTML("afterbegin", `<h2>${data[0]["h"]}</h2>`);
+        //console.log(data);
     })
 };
-
 getQuote();
-
             </script>
         </div>
+
     </body>
     <script type="module" src="script.mjs"></script>
 </html>
